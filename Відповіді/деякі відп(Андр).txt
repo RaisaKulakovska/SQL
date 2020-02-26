@@ -1,0 +1,10 @@
+SELECT * FROM orders WHERE odate IN('1990-03-10', '1990-04-10');
+
+SELECT snum FROM salers WHERE sname IN('Peel', 'Motika');
+SELECT cname FROM customers WHERE snum IN(1001, 1004);
+SELECT cname FROM customers WHERE snum IN(SELECT snum FROM salers WHERE sname IN('Peel', 'Motika'));
+SELECT * FROM salers WHERE sname IS NULL;
+
+SELECT ((SELECT SUM(amt) FROM orders) / (SELECT COUNT(amt) FROM orders)) AS result;
+
+SELECT ((SELECT SUM(amt) FROM orders) / (SELECT COUNT(amt) FROM orders)) AS result;
